@@ -1,0 +1,31 @@
+void setup()  
+ { 
+ 	size(640, 360); 
+ } 
+ 
+ 
+ void draw()  
+ { 
+ 	background(102); 
+ 	pushMatrix(); 
+   	translate(width*0.5, height*0.5); 
+   	//rotate(frameCount / 200.0); 
+   	polygon(0, 0, 82, 3);  // Triangle 
+ 	popMatrix(); 
+ } 
+ 
+ 
+ 
+
+ void polygon(float x, float y, float radius, int npoints) 
+18 { 
+19 	float angle = TWO_PI / npoints; 
+20 	beginShape(); 
+21 	for (float a = 0; a < TWO_PI; a += angle)  
+22 	{ 
+23 		float sx = x + cos(a) * radius; 
+24 		float sy = y + sin(a) * radius; 
+25 		vertex(sx, sy); 
+26 	} 
+27 	endShape(CLOSE); 
+28 } 
